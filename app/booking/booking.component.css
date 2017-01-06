@@ -1,0 +1,41 @@
+.booking{
+  width: 500px;
+  height: 290px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: solid;
+  border-color: #5E5E5E;
+}
+
+.booking_title{
+  text-align: center;
+  margin: 0px 0px 0px 0px;
+  font-size: 18px;
+  font-style: bold;
+  padding: 10px 10px 10px 10px;
+  background-color: #D1D1D1;
+}
+
+.booking_form{
+  padding: 10px 10px 10px 10px;
+  background-color: white;
+}
+
+.btn_next{
+  margin-top: 20px;
+  margin-left: 150px;
+  background-color: #0B56A7;
+  border-color: #0B56A7;
+  color: white;
+}
+
+.btn_next:hover{
+  margin-top: 20px;
+  margin-left: 150px;
+  background-color: #FFA500;
+  border-color: #FFA500;
+}

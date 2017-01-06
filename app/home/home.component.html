@@ -1,0 +1,161 @@
+<header id="header"><!--header-->
+		<div class="header_top"><!--header_top-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="contactinfo">
+							<ul class="nav nav-pills">
+								<li><a href=""><i class="fa fa-phone"></i> +62 089658825172</a></li>
+								<li><a href=""><i class="fa fa-envelope"></i> ukhtid4@gmail.com</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div><!--/header_top-->
+
+		<div class="header-middle"><!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+
+					</div>
+					<div class="col-sm-8">
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href="#"><i class="fa fa-user"></i> Create Account</a></li>
+								<li><a (click)="gotoCart()"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-middle-->
+	</header><!--/header-->
+
+	<section id="slider"><!--slider-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+							<li data-target="#slider-carousel" data-slide-to="1"></li>
+							<li data-target="#slider-carousel" data-slide-to="2"></li>
+						</ol>
+
+						<div class="carousel-inner">
+							<div class="item active">
+								<div class="col-sm-6">
+									<h1>CANTIK.COM</h1>
+									<h2>Shop Women's Fashion Online</h2>
+									<p>Get the latest womens fashion online at Cantik.com. With 100s of new styles every day from dresses, tops, footwear, & accessories, shop womens clothing now! </p>
+									<button type="button" class="btn btn-default get">WHAT'S NEW</button>
+								</div>
+								<div class="col-sm-6">
+									<img src="images/home/girl1.jpg" class="girl img-responsive" alt="" />
+								</div>
+							</div>
+
+							<div class="item">
+								<div class="col-sm-6">
+									<h1><span>E</span>-SHOPPER</h1>
+									<h2>Free Ecommerce Template</h2>
+									<p> FOR GIRLS THAT GET IT. </p>
+									<button type="button" class="btn btn-default get">WHAT'S NEW</button>
+								</div>
+								<div class="col-sm-6">
+									<img src="images/home/girl3.jpg" class="girl img-responsive" alt="" />
+									<img src="images/home/pricing.png" class="pricing" alt="" />
+								</div>
+							</div>
+
+						</div>
+
+						<a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+							<i class="fa fa-angle-left"></i>
+						</a>
+						<a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+							<i class="fa fa-angle-right"></i>
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section><!--/slider-->
+
+	<section>
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-12 padding-right">
+					<div class="category-tab"><!--category-tab-->
+						<div class="col-sm-12">
+							<ul class="nav nav-tabs nav-pills">
+								<li *ngFor="let tipe of tipes"><a href="#{{tipe.tipe_barang}}" data-toggle="tab">{{tipe.kode_tipe}}</a></li>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div *ngFor="let tipe of tipes" class="tab-pane fade" id="{{tipe.tipe_barang}}" >
+								<div *ngFor="let product of products">
+								<div *ngIf="product.kode_tipe === tipe.kode_tipe">
+									<div  class="col-sm-4" style="margin-bottom:10px ; margin-top:15px ">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img [src]="product.image" alt=""  width="300" height="450" />
+												<h2>{{product.harga_barang}}</h2>
+												<p>{{product.nama_barang}}</p>
+												<button class="btn_next" (click)="gotoDetail(product.kode_barang)">Details</button>
+											</div>
+
+										</div>
+									</div>
+									</div>
+								</div>
+								</div>
+
+							</div>
+						</div>
+					</div><!--/category-tab-->
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	
+	<footer id="footer"><!--Footer-->
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-7">
+						<div class="companyinfo">
+							<h2><span>Cantik</span>.com</h2>
+							<p>Web Fashion Online yang dibuat oleh ukhti D4 teknik Informatika POLBAN angkatan 2014 </p>
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="address">
+							<img src="images/home/map.png" alt="" />
+							<p>POLBAN Ciwaruga, Kab Bandung Barat </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+ 
+
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<p class="pull-left">Copyright © 2016 CANTIK.COM Inc. All rights reserved.</p>
+					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">UkhtiD4</a></span></p>
+				</div>
+			</div>
+		</div>
+
+	</footer><!--/Footer-->
