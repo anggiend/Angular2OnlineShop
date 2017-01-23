@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var mock_product_1 = require('../_helpers/mock-product');
-var core_1 = require('@angular/core');
-var mock_detail_1 = require('../_helpers/mock-detail');
+var mock_product_1 = require("../_helpers/mock-product");
+var core_1 = require("@angular/core");
+var mock_detail_1 = require("../_helpers/mock-detail");
 var ProductService = (function () {
     function ProductService() {
     }
@@ -26,14 +26,14 @@ var ProductService = (function () {
     };
     ProductService.prototype.getDetail = function (kode_barang) {
         return this.getDetails()
-            .then(function (details) { return details.find(function (detail) { return detail.kode_barang === kode_barang; }); });
+            .then(function (details) { return details.filter(function (detail) { return detail.kode_barang === kode_barang; }); });
     };
-    ProductService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], ProductService);
     return ProductService;
 }());
+ProductService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], ProductService);
 exports.ProductService = ProductService;
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

@@ -8,60 +8,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var product_service_1 = require('../_services/product.service');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var cart_service_1 = require("../_services/cart.service");
 var CartComponent = (function () {
-    function CartComponent(productService, route, router) {
-        this.productService = productService;
+    function CartComponent(cartService, route, router) {
+        this.cartService = cartService;
         this.route = route;
         this.router = router;
-        this.cart = [];
+        this.items = [];
     }
     CartComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.product = { kode_barang: 'Bj1',
-            kode_tipe: 'woman',
-            nama_barang: 'Abaya Dress',
-            deskripsi_barang: 'Outer dengan bahan kain lembut , cocok untuk digunakan ketika bersantai ',
-            harga_barang: 350000,
-            tanggal_datang: new Date('2016-11-12T00:00:00'),
-            ukuran: 'M',
-            image: '../../image/1.jpg' };
-        this.detail = { kode_barang: 'Bj1',
-            warna: 'Hitam',
-            bahan: 'Katun',
-            stock: 12 };
-        this.route.params.subscribe(function (param) {
-            _this.kode_barang = param['kode_barang'];
-        });
-        this.getProduct(this.kode_barang);
-        this.getDetail(this.kode_barang);
+        this.items = this.getItem();
     };
-    CartComponent.prototype.getProduct = function (kode_barang) {
-        var _this = this;
-        this.productService
-            .getProduct(kode_barang)
-            .then(function (products) { return _this.product = products; });
-    };
-    CartComponent.prototype.getDetail = function (kode_barang) {
-        var _this = this;
-        this.productService
-            .getDetail(kode_barang)
-            .then(function (details) { return _this.detail = details; });
+    CartComponent.prototype.getItem = function () {
+        return this.cartService.getCart();
     };
     CartComponent.prototype.gotoHome = function () {
-        this.router.navigate(['home']);
+        this.router.navigate(['/home/']);
     };
-    CartComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'cart',
-            templateUrl: 'cart.component.html'
-        }), 
-        __metadata('design:paramtypes', [product_service_1.ProductService, router_1.ActivatedRoute, router_1.Router])
-    ], CartComponent);
     return CartComponent;
 }());
+CartComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'cart',
+        templateUrl: 'cart.component.html'
+    }),
+    __metadata("design:paramtypes", [cart_service_1.CartService,
+        router_1.ActivatedRoute, router_1.Router])
+], CartComponent);
 exports.CartComponent = CartComponent;
 //# sourceMappingURL=cart.component.js.map

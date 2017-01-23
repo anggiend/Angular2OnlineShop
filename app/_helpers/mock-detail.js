@@ -1,10 +1,12 @@
 "use strict";
 exports.DETAILS = [
-    { kode_barang: 'Bj1',
+    { id_detail: 'BjW11',
+        kode_barang: 'BjW1',
         warna: 'merah',
         bahan: 'satin',
         stock: 12 },
-    { kode_barang: 'Bj1',
+    { id_detail: 'BjW12',
+        kode_barang: 'BjW1',
         warna: 'biru muda',
         bahan: 'wolfis',
         stock: 1 },

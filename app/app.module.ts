@@ -1,41 +1,74 @@
 import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
-import { ReservationService } from './_services/reservation.service'
+import { HttpModule }     from '@angular/http';
 import { AppComponent }         from './app.component';
-import { ReservationComponent }   from './reservation/reservation.component';
 import { AppRoutingModule }     from './app-routing.module';
-import { ListTrainComponent }   from './list-train/list-train.component';
-import { BookingComponent }   from './booking/booking.component';
 import { ProductService} from './_services/product.service';
 import { HomeComponent }    from './home/home.component';
 import { TipeService } from './_services/tipe.service';
 import { DetailComponent } from './detail/detail.component';
 import { CartComponent } from './cart/cart.component';
+import { CartService } from './_services/cart.service';
+
+//fakebackend 
+import { fakeBackendProvider } from './_helpers/fake-backend';
+import { MockBackend, MockConnection } from '@angular/http/testing';
+import { BaseRequestOptions } from '@angular/http';
+
+//authentication
+import { AlertComponent } from './_directive/alert.component';
+import { AuthGuard } from './_guards/auth.guard';
+import { AlertService } from './_services/alert.service';
+import { AuthenticationService } from './_services/authentication.service';
+import { UserService } from './_services/user.service';
+import { HomeComponentLogin } from './home-login/home.component-login';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { PaymentComponent } from './payment/payment.component';
+import { PaymentComponentConfirm } from './paymentconfirm/paymentconfirm.component';
+import { PaymentComponentMethod } from './paymentmethod/paymentmethod.component';
+
+import { PaymentService } from './_services/payment.service';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpModule,
   ],
   declarations: [
     AppComponent,
-    ReservationComponent,
-    ListTrainComponent,
-    BookingComponent ,
     HomeComponent,
     DetailComponent,
-	CartComponent,
+    CartComponent,
+    AppComponent,
+    AlertComponent,
+    HomeComponentLogin,
+    LoginComponent,
+    RegisterComponent,
+    PaymentComponent,
+    PaymentComponentConfirm,
+    PaymentComponentMethod,
   ],
-  providers: [ReservationService,ProductService , TipeService],
+   providers: [
+    ReservationService,
+    ProductService , 
+    TipeService, 
+    fakeBackendProvider, 
+    MockBackend, 
+    BaseRequestOptions,   
+    AuthGuard,
+    AlertService,
+    AuthenticationService,
+    UserService,
+    PaymentService,
+    CartService,
+  ],
   bootstrap: [ AppComponent ]
 })
+
+
+
 export class AppModule { }
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

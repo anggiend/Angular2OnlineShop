@@ -1,22 +1,19 @@
-<html lang="en">
-
+<html>
 <body>
 	<header id="header"><!--header-->
-		<div class="header_top"><!--header_top-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="contactinfo">
-							<ul class="nav nav-pills">
-								<li><a href=""><i class="fa fa-phone"></i> +62 089658825172</a></li>
-								<li><a href=""><i class="fa fa-envelope"></i> ukhtid4@gmail.com</a></li>
-							</ul>
-						</div>
-					</div>
-
-				</div>
+		<div class="header_bg">
+	<div class="container">
+		<div class="header">
+		<div class="head-t">
+			<div class="logo">
+				<a href="index.html"><img src="images/home/logo.png" class="img-responsive" alt="" style="width:50%; height:auto; padding-bottom:10px"/> </a>
 			</div>
-		</div><!--/header_top-->
+			<!-- start header_right -->
+		</div>
+		</div>
+	</div>
+</div>
+		
 
 		<div class="header-middle"><!--header-middle-->
 			<div class="container">
@@ -25,7 +22,7 @@
 					<div class="col-sm-12">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href=""><i class="fa fa-user"></i> Create Account</a></li>
+								
 								<li><a (click)="gotoCart()"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
@@ -52,33 +49,28 @@
 						<tr class="cart_menu">
 							<td class="image">Item</td>
 							<td class="description"></td>
-							<td class="price">Harga</td>
-							<td class="quantity">Jumlah Item</td>
+							<td class="price">Price</td>
+							<td class="quantity">Quantity</td>
 							<td class="total">Total</td>
 							<td></td>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
+						<tr *ngFor="let item of items">
 							<td class="cart_product">
-								<a href=""><img src="images/cart/one.png" alt=""></a>
+								<img [src]="item.image" alt=""  width="250" height="400" />
 							</td>
 							<td class="cart_description">
-								<h4><a href="">Colorblock Scuba</a></h4>
-								<p>Web ID: 1089772</p>
+								<h4><a [routerLink]="['/detail/',item.kode_barang]">{{item.nama_barang}}</a></h4>
 							</td>
 							<td class="cart_price">
-								<p>$59</p>
+								<span>{{item.harga_barang}}</span>
 							</td>
 							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-									<a class="cart_quantity_up" href=""> + </a>
-									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-									<a class="cart_quantity_down" href=""> - </a>
-								</div>
+								<span>{{item.quantitas}}</span>
 							</td>
 							<td class="cart_total">
-								<p class="cart_total_price">$59</p>
+								<p class="cart_total_price">{{cartService.getTotal(item.quantitas,item.harga_barang)}}</p>
 							</td>
 							<td class="cart_delete">
 								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
@@ -99,12 +91,12 @@
 				<div class="col-sm-6">
 					<div class="total_area">
 						<ul>
-							<li>Total Harga <span>$59</span></li>
-							<li>Biaya Pengiriman <span>Free</span></li>
-							<li>Total <span>$61</span></li>
+							<li>Total Payment <span> </span></li>
+							<td class="cart_totalkeseluruhan">
+								<p class="cart_total_price">{{cartService.getTotalPrice()}}</p>
 						</ul>
-							<a class="btn btn-default update" href="">Beli</a>
-							<a class="btn btn-default check_out" href="">Batalkan</a>
+							<a [routerLink]="['/payment']" class="btn btn-default">Purchase</a>
+							<a class="btn btn-default check_out" href="">Cancel</a>
 					</div>
 				</div>
 			</div>
@@ -112,36 +104,47 @@
 	</section><!--/#do_action-->
 
 	<footer id="footer"><!--Footer-->
-		<div class="footer-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-7">
-						<div class="companyinfo">
-							<h2><span>Cantik</span>.com</h2>
-							<p>Web Fashion Online yang dibuat oleh ukhti D4 teknik Informatika POLBAN angkatan 2014 </p>
-						</div>
-					</div>
-
-					<div class="col-sm-4">
-						<div class="address">
-							<img src="images/home/map.png" alt="" />
-							<p>POLBAN Ciwaruga, Kab Bandung Barat </p>
-						</div>
-					</div>
+		<div class="footer">
+	<div class="container">
+		<div class="col-md-3 cust">
+			<h4>CUSTOMER CARE</h4>
+				<li><a href="#">Help Center</a></li>
+				<li><a href="#">FAQ</a></li>
+				<li><a href="buy.html">How To Buy</a></li>
+				<li><a href="#">Delivery</a></li>
+		</div>
+		<div class="col-md-2 abt">
+			<h4>ABOUT US</h4>
+				<li><a href="#">Our Stories</a></li>
+				<li><a href="#">Press</a></li>
+				<li><a href="#">Career</a></li>
+				<li><a href="contact.html">Contact</a></li>
+		</div>
+		<div class="col-md-2 myac">
+			<h4>MY ACCOUNT</h4>
+				<li><a href="register.html">Register</a></li>
+				<li><a href="#">My Cart</a></li>
+				<li><a href="#">Order History</a></li>
+				<li><a href="buy.html">Payment</a></li>
+		</div>
+		<div class="col-md-5 our-st">
+			<div class="our-left">
+				<h4>OUR STORES</h4>
+			</div>
+			<div class="our-left1">
+				<div class="cr_btn1">
+					<a href="#">BANDUNG</a>
 				</div>
 			</div>
+			<div class="clearfix"> </div>
+				<li><i class="add"> </i>Jl. Ciwaruga With Love, no.4</li>
+				<li><i class="phone"> </i>0858 61622096</li>
+				<li><a href="mailto:info@example.com"><i class="mail"> </i>ukhtiD4@gmail.com </a></li>
 		</div>
- 
-
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="row">
-					<p class="pull-left">Copyright © 2016 CANTIK.COM Inc. All rights reserved.</p>
-					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">UkhtiD4</a></span></p>
-				</div>
-			</div>
-		</div>
-
+		<div class="clearfix"> </div>
+			<p>Copyright © 2016 LaLaLa Project. All rights reserved. Design by <a href="http://www.themeum.com" style="color:#ed0b19;">UkhtiD4.2014</a></p>
+	</div>
+</div>
 	</footer><!--/Footer-->
 </body>
 </html>

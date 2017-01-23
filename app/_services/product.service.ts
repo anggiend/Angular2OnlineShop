@@ -20,16 +20,10 @@ export class ProductService {
     return this.getProducts()
             .then(products => products.find(product => product.kode_barang === kode_barang));
   }
-  getDetail(kode_barang : string): Promise<Detail> {
+
+  getDetail(kode_barang : string): Promise<Detail[]> {
     return this.getDetails()
-            .then(details => details.find(detail => detail.kode_barang === kode_barang));
+            .then(details => details.filter(detail => detail.kode_barang === kode_barang));
   }
 }
 
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

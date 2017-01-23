@@ -3,6 +3,8 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ProductService } from '../_services/product.service';
 import { Product } from '../_models/product';
 import { Detail } from '../_models/detail';
+import { CartService } from  '../_services/cart.service';
+import { Item } from '../_models/cart';
 
 @Component({
   moduleId: module.id,
@@ -11,35 +13,25 @@ import { Detail } from '../_models/detail';
 })
 
 export class DetailComponent implements OnInit{
-  product: Product;
-  detail: Detail;
+  product = new Product();
+  detail: Detail[] = [];
+  item = new Item();
   kode_barang: string;
-  cart : any[]=[];
 
   constructor(
     private productService: ProductService,
+    private cartService: CartService,
     private route: ActivatedRoute,
 	private router: Router) { }
 
   ngOnInit(): void {
-    this.product ={  kode_barang : 'Bj1' ,
-        kode_tipe : 'woman' ,
-        nama_barang : 'Abaya Dress' ,
-        deskripsi_barang : 'Outer dengan bahan kain lembut , cocok untuk digunakan ketika bersantai ' ,
-        harga_barang :  350000 ,
-        tanggal_datang : new Date('2016-11-12T00:00:00') ,
-        ukuran : 'M',
-        image : '../../image/1.jpg'};
-    this.detail = { kode_barang : 'Bj1',
-      warna : 'Hitam',
-      bahan : 'Katun',
-      stock : 12 };
     this.route.params.subscribe(
       (param: Params) => {
         this.kode_barang = param['kode_barang'];
       });
     this.getProduct(this.kode_barang);
     this.getDetail(this.kode_barang);
+    this.item.quantitas =  2;
   }
 
 
@@ -55,8 +47,19 @@ export class DetailComponent implements OnInit{
       .then(details => this.detail = details);
   }
 
-    gotoCart(): void {
+  gotoCart(): void {
       this.router.navigate(['/cart/']);}
+
+  addtoCart(product: Product) : void{
+      this.item.kode_barang = product.kode_barang;
+      this.item.kode_tipe = product.kode_tipe;
+      this.item.nama_barang = product.nama_barang;
+      this.item.harga_barang = product.harga_barang;
+      this.item.ukuran = product.ukuran;
+      this.item.image = product.image;
+      this.cartService.addItem(this.item);
+      window.alert(this.item.nama_barang +" has been added to Cart");
+  }
 
 	gotoHome(): void {
       this.router.navigate(['/home/']);}

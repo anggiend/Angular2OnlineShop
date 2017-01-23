@@ -1,20 +1,4 @@
 <header id="header"><!--header-->
-		<div class="header_top"><!--header_top-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="contactinfo">
-							<ul class="nav nav-pills">
-								<li><a href=""><i class="fa fa-phone"></i> +62 089658825172</a></li>
-								<li><a href=""><i class="fa fa-envelope"></i> ukhtid4@gmail.com</a></li>
-							</ul>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div><!--/header_top-->
-
 		<div class="header-middle"><!--header-middle-->
 			<div class="container">
 				<div class="row">
@@ -24,70 +8,17 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-user"></i> Create Account</a></li>
-								<li><a (click)="gotoCart()"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+								<!--<li><a href=""><i class="fa fa-lock"></i> Login</a></li>-->
+								<li><a [routerLink]="['/login']" class="btn btn-link">Login</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div><!--/header-middle-->
-	</header><!--/header-->
-
-	<section id="slider"><!--slider-->
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
-						<ol class="carousel-indicators">
-							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
-							<li data-target="#slider-carousel" data-slide-to="1"></li>
-							<li data-target="#slider-carousel" data-slide-to="2"></li>
-						</ol>
-
-						<div class="carousel-inner">
-							<div class="item active">
-								<div class="col-sm-6">
-									<h1>CANTIK.COM</h1>
-									<h2>Shop Women's Fashion Online</h2>
-									<p>Get the latest womens fashion online at Cantik.com. With 100s of new styles every day from dresses, tops, footwear, & accessories, shop womens clothing now! </p>
-									<button type="button" class="btn btn-default get">WHAT'S NEW</button>
-								</div>
-								<div class="col-sm-6">
-									<img src="images/home/girl1.jpg" class="girl img-responsive" alt="" />
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Free Ecommerce Template</h2>
-									<p> FOR GIRLS THAT GET IT. </p>
-									<button type="button" class="btn btn-default get">WHAT'S NEW</button>
-								</div>
-								<div class="col-sm-6">
-									<img src="images/home/girl3.jpg" class="girl img-responsive" alt="" />
-									<img src="images/home/pricing.png" class="pricing" alt="" />
-								</div>
-							</div>
-
-						</div>
-
-						<a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
-							<i class="fa fa-angle-left"></i>
-						</a>
-						<a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
-							<i class="fa fa-angle-right"></i>
-						</a>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</section><!--/slider-->
-
-	<section>
+</header><!--/header-->
+<section>
+	<link rel="stylesheet" type="text/css" href="home.component.css">
 		<div class="container">
 			<div class="row">
 
@@ -107,9 +38,9 @@
 										<div class="single-products">
 											<div class="productinfo text-center">
 												<img [src]="product.image" alt=""  width="300" height="450" />
-												<h2>{{product.harga_barang}}</h2>
+												<h3>{{product.harga_barang}}</h3>
 												<p>{{product.nama_barang}}</p>
-												<button class="btn_next" (click)="gotoDetail(product.kode_barang)">Details</button>
+												<button class="btn btn deffault" (click)="gotoDetail(product.kode_barang)">Details</button>
 											</div>
 
 										</div>
@@ -124,38 +55,94 @@
 				</div>
 			</div>
 		</div>
-	</section>
-	
-	
+</section>
+	<section id="slider"><!--slider-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+							<li data-target="#slider-carousel" data-slide-to="1"></li>
+							<li data-target="#slider-carousel" data-slide-to="2"></li>
+						</ol>
+						<link rel="stylesheet" type="text/css" href="home.component.css">
+						<div class="carousel-inner">
+							<div class="item active">
+								<div class="col-sm-12">
+									<h1>LaLaLa Project</h1>
+									<p>Get the latest womens fashion online at LaLaLa Project With 100s of new styles every day from dresses, tops, footwear, & accessories, shop womens clothing now! </p>
+								</div>
+								<div class="col-sm-12">
+									<img src="images/home/tig.jpg" class="girl img-responsive" alt="" style="width:100%; height:auto;" />
+								</div>
+							</div>
+
+							<div class="item">
+								<div class="col-sm-12">
+									<h2> LaLaLa Project </h2>
+									<p> DISCOUNT UP TO 70% </p>
+								</div>
+								<div class="col-sm-12">
+									<img src="images/home/DP.jpg" class="girl img-responsive" alt="" style="width:100%; height:auto;" />
+								</div>
+							</div>
+
+						</div>
+
+						<a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+							<i class="fa fa-angle-left"></i>
+						</a>
+						<a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+							<i class="fa fa-angle-right"></i>
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section><!--/slider-->
+	<section>
+<link rel="stylesheet" type="text/css" href="home.component.css">
 	<footer id="footer"><!--Footer-->
-		<div class="footer-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-7">
-						<div class="companyinfo">
-							<h2><span>Cantik</span>.com</h2>
-							<p>Web Fashion Online yang dibuat oleh ukhti D4 teknik Informatika POLBAN angkatan 2014 </p>
-						</div>
-					</div>
-
-					<div class="col-sm-4">
-						<div class="address">
-							<img src="images/home/map.png" alt="" />
-							<p>POLBAN Ciwaruga, Kab Bandung Barat </p>
-						</div>
-					</div>
+		<div class="footer">
+	<div class="container">
+		<div class="col-md-3 cust">
+			<h4>CUSTOMER CARE</h4>
+				<li><a href="#">Help Center</a></li>
+				<li><a href="#">FAQ</a></li>
+				<li><a href="buy.html">How To Buy</a></li>
+				<li><a href="#">Delivery</a></li>
+		</div>
+		<div class="col-md-2 abt">
+			<h4>ABOUT US</h4>
+				<li><a href="#">Our Stories</a></li>
+				<li><a href="#">Press</a></li>
+				<li><a href="#">Career</a></li>
+				<li><a href="contact.html">Contact</a></li>
+		</div>
+		<div class="col-md-2 myac">
+			<h4>MY ACCOUNT</h4>
+				<li><a href="register.html">Register</a></li>
+				<li><a href="#">My Cart</a></li>
+				<li><a href="#">Order History</a></li>
+				<li><a href="buy.html">Payment</a></li>
+		</div>
+		<div class="col-md-5 our-st">
+			<div class="our-left">
+				<h4>OUR STORES</h4>
+			</div>
+			<div class="our-left1">
+				<div class="cr_btn1">
+					<a href="#">BANDUNG</a>
 				</div>
 			</div>
+			<div class="clearfix"> </div>
+				<li><i class="add"> </i>Jl. Ciwaruga With Love, no.4</li>
+				<li><i class="phone"> </i>0858 61622096</li>
+				<li><a href="mailto:info@example.com"><i class="mail"> </i>ukhtiD4@gmail.com </a></li>
 		</div>
- 
-
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="row">
-					<p class="pull-left">Copyright © 2016 CANTIK.COM Inc. All rights reserved.</p>
-					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">UkhtiD4</a></span></p>
-				</div>
-			</div>
-		</div>
-
-	</footer><!--/Footer-->
+		<div class="clearfix"> </div>
+			<p>Copyright © 2016 LaLaLa Project. All rights reserved. Design by <a href="http://www.themeum.com" style="color:#ed0b19;">UkhtiD4.2014</a></p>
+	</div>
+</div>
