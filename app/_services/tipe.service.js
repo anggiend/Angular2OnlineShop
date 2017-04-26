@@ -8,24 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var mock_tipe_1 = require("../_helpers/mock-tipe");
-var core_1 = require("@angular/core");
+var mock_tipe_1 = require('../_helpers/mock-tipe');
+var core_1 = require('@angular/core');
 var TipeService = (function () {
     function TipeService() {
     }
     TipeService.prototype.getTipes = function () {
         return Promise.resolve(mock_tipe_1.TIPES);
     };
+    TipeService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [])
+    ], TipeService);
     return TipeService;
 }());
-TipeService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [])
-], TipeService);
 exports.TipeService = TipeService;
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/
 //# sourceMappingURL=tipe.service.js.map

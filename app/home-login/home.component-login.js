@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var user_service_1 = require("../_services/user.service");
+var core_1 = require('@angular/core');
+var user_service_1 = require('../_services/user.service');
 var HomeComponentLogin = (function () {
     function HomeComponentLogin(userService) {
         this.userService = userService;
@@ -27,14 +27,14 @@ var HomeComponentLogin = (function () {
         var _this = this;
         this.userService.getAll().subscribe(function (users) { _this.users = users; });
     };
+    HomeComponentLogin = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            templateUrl: 'home.component-login.html'
+        }), 
+        __metadata('design:paramtypes', [user_service_1.UserService])
+    ], HomeComponentLogin);
     return HomeComponentLogin;
 }());
-HomeComponentLogin = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        templateUrl: 'home.component-login.html'
-    }),
-    __metadata("design:paramtypes", [user_service_1.UserService])
-], HomeComponentLogin);
 exports.HomeComponentLogin = HomeComponentLogin;
 //# sourceMappingURL=home.component-login.js.map

@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var http_1 = require("@angular/http");
+var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
 var PaymentService = (function () {
     function PaymentService(http) {
         this.http = http;
@@ -35,11 +35,11 @@ var PaymentService = (function () {
             return new http_1.RequestOptions({ headers: headers });
         }
     };
+    PaymentService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], PaymentService);
     return PaymentService;
 }());
-PaymentService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
-], PaymentService);
 exports.PaymentService = PaymentService;
 //# sourceMappingURL=payment.service.js.map

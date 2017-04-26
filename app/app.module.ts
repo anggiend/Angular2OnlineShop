@@ -53,7 +53,6 @@ import { PaymentService } from './_services/payment.service';
     PaymentComponentMethod,
   ],
    providers: [
-    ReservationService,
     ProductService , 
     TipeService, 
     fakeBackendProvider, 

@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var CartService = (function () {
     function CartService() {
         this.cart = [];
@@ -35,11 +35,11 @@ var CartService = (function () {
     CartService.prototype.getTotal = function (quantitas, harga) {
         return harga * quantitas;
     };
+    CartService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [])
+    ], CartService);
     return CartService;
 }());
-CartService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [])
-], CartService);
 exports.CartService = CartService;
 //# sourceMappingURL=cart.service.js.map

@@ -8,12 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var product_service_1 = require("../_services/product.service");
-var product_1 = require("../_models/product");
-var cart_service_1 = require("../_services/cart.service");
-var cart_1 = require("../_models/cart");
+var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
+var product_service_1 = require('../_services/product.service');
+var product_1 = require('../_models/product');
+var cart_service_1 = require('../_services/cart.service');
+var cart_1 = require('../_models/cart');
 var DetailComponent = (function () {
     function DetailComponent(productService, cartService, route, router) {
         this.productService = productService;
@@ -61,18 +61,15 @@ var DetailComponent = (function () {
     DetailComponent.prototype.gotoHome = function () {
         this.router.navigate(['/home/']);
     };
+    DetailComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'detail',
+            templateUrl: 'detail.component.html'
+        }), 
+        __metadata('design:paramtypes', [product_service_1.ProductService, cart_service_1.CartService, router_1.ActivatedRoute, router_1.Router])
+    ], DetailComponent);
     return DetailComponent;
 }());
-DetailComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'detail',
-        templateUrl: 'detail.component.html'
-    }),
-    __metadata("design:paramtypes", [product_service_1.ProductService,
-        cart_service_1.CartService,
-        router_1.ActivatedRoute,
-        router_1.Router])
-], DetailComponent);
 exports.DetailComponent = DetailComponent;
 //# sourceMappingURL=detail.component.js.map

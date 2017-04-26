@@ -8,10 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var alert_service_1 = require("../_services/alert.service");
-var payment_service_1 = require("../_services/payment.service");
+var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
+var alert_service_1 = require('../_services/alert.service');
+var payment_service_1 = require('../_services/payment.service');
 var PaymentComponent = (function () {
     function PaymentComponent(router, paymentService, alertService) {
         this.router = router;
@@ -32,16 +32,14 @@ var PaymentComponent = (function () {
             _this.loading = false;
         });
     };
+    PaymentComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            templateUrl: 'payment.component.html'
+        }), 
+        __metadata('design:paramtypes', [router_1.Router, payment_service_1.PaymentService, alert_service_1.AlertService])
+    ], PaymentComponent);
     return PaymentComponent;
 }());
-PaymentComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        templateUrl: 'payment.component.html'
-    }),
-    __metadata("design:paramtypes", [router_1.Router,
-        payment_service_1.PaymentService,
-        alert_service_1.AlertService])
-], PaymentComponent);
 exports.PaymentComponent = PaymentComponent;
 //# sourceMappingURL=payment.component.js.map

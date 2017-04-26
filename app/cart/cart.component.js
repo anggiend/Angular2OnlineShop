@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var cart_service_1 = require("../_services/cart.service");
+var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
+var cart_service_1 = require('../_services/cart.service');
 var CartComponent = (function () {
     function CartComponent(cartService, route, router) {
         this.cartService = cartService;
@@ -27,16 +27,15 @@ var CartComponent = (function () {
     CartComponent.prototype.gotoHome = function () {
         this.router.navigate(['/home/']);
     };
+    CartComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'cart',
+            templateUrl: 'cart.component.html'
+        }), 
+        __metadata('design:paramtypes', [cart_service_1.CartService, router_1.ActivatedRoute, router_1.Router])
+    ], CartComponent);
     return CartComponent;
 }());
-CartComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'cart',
-        templateUrl: 'cart.component.html'
-    }),
-    __metadata("design:paramtypes", [cart_service_1.CartService,
-        router_1.ActivatedRoute, router_1.Router])
-], CartComponent);
 exports.CartComponent = CartComponent;
 //# sourceMappingURL=cart.component.js.map
